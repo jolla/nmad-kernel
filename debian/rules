@@ -11,7 +11,7 @@ export DH_VERBOSE=1
 
 include /usr/share/dpkg/architecture.mk
 
-DEB_PATH=debian/wlanpi-kernel
+DEB_PATH=debian/nomad-kernel
 
 %:
 	dh $@
@@ -24,7 +24,7 @@ override_dh_auto_install:
 	cp output/boot/bcm271*.dtb $(DEB_PATH)/boot
 	cp output/boot/kernel8-wp.img $(DEB_PATH)/boot
 	cp output/boot/COPYING.linux $(DEB_PATH)/boot
-	cp -r output/root/lib/modules/*v8-wlanpi+ $(DEB_PATH)/lib/modules
+	cp -r output/root/lib/modules/*v8-nomad+ $(DEB_PATH)/lib/modules
 	dh_auto_install
 
 override_dh_fixperms:

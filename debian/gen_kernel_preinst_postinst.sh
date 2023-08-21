@@ -37,11 +37,11 @@ fi
 
 NEW_SIZE="$(du -cm ${BOOT_PATH}/*.dtb ${BOOT_PATH}/kernel*.img ${BOOT_PATH}/COPYING.linux ${BOOT_PATH}/overlays/* | tail -n1 | cut -f1)"
 
-printf "#!/bin/sh -e\n\n" | tee wlanpi-kernel.postinst > wlanpi-kernel.preinst
+printf "#!/bin/sh -e\n\n" | tee nomad-kernel.postinst > nomad-kernel.preinst
 
-cat <<EOF >> wlanpi-kernel.postinst
+cat <<EOF >> nomad-kernel.postinst
 get_file_list() {
-  cat /var/lib/dpkg/info/wlanpi-kernel.md5sums /var/lib/dpkg/info/wlanpi-kernel.md5sums 2> /dev/null | awk '/ boot/ {print "/"\$2}'
+  cat /var/lib/dpkg/info/nomad-kernel.md5sums /var/lib/dpkg/info/nomad-kernel.md5sums 2> /dev/null | awk '/ boot/ {print "/"\$2}'
 }
 
 get_filtered_file_list() {
@@ -77,27 +77,27 @@ fi
 
 EOF
 
-printf "mkdir -p /usr/share/rpikernelhack/overlays\n" >> wlanpi-kernel.preinst
-printf "mkdir -p /boot/overlays\n" >> wlanpi-kernel.preinst
+printf "mkdir -p /usr/share/rpikernelhack/overlays\n" >> nomad-kernel.preinst
+printf "mkdir -p /boot/overlays\n" >> nomad-kernel.preinst
 
-cat <<EOF >> wlanpi-kernel.postinst
+cat <<EOF >> nomad-kernel.postinst
 if [ "\$SKIP_FILES" != "1" ] || [ "\${SKIP_PI4}" = "0" ]; then
 EOF
 for FN in ${KERNEL_IMAGES}; do
   if [ -f "$FN" ]; then
     FN=${FN##${BOOT_PATH}/}
-    cat << EOF >> wlanpi-kernel.postinst
+    cat << EOF >> nomad-kernel.postinst
   if [ -f /usr/share/rpikernelhack/$FN ]; then
     rm -f /boot/$FN
     dpkg-divert --package rpikernelhack --rename --remove /boot/$FN
     sync
   fi
 EOF
-  printf "dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/%s /boot/%s\n" "$FN" "$FN" >> wlanpi-kernel.preinst
+  printf "dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/%s /boot/%s\n" "$FN" "$FN" >> nomad-kernel.preinst
   fi
 done
 
-cat <<EOF >> wlanpi-kernel.postinst
+cat <<EOF >> nomad-kernel.postinst
 fi
 
 EOF
@@ -105,20 +105,20 @@ EOF
 for FN in "${BOOT_PATH}"/*.dtb ${BOOT_PATH}/COPYING.linux "${BOOT_PATH}"/overlays/*; do
   if [ -f "$FN" ]; then
     FN=${FN#${BOOT_PATH}/}
-    cat << EOF >> wlanpi-kernel.postinst
+    cat << EOF >> nomad-kernel.postinst
 if [ -f /usr/share/rpikernelhack/$FN ]; then
   rm -f /boot/$FN
   dpkg-divert --package rpikernelhack --rename --remove /boot/$FN
   sync
 fi
 EOF
-  printf "dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/%s /boot/%s\n" "$FN" "$FN" >> wlanpi-kernel.preinst
+  printf "dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/%s /boot/%s\n" "$FN" "$FN" >> nomad-kernel.preinst
   fi
 done
 
-cat <<EOF >> wlanpi-kernel.preinst
-if [ -f /etc/default/wlanpi-kernel ]; then
-  . /etc/default/wlanpi-kernel
+cat <<EOF >> nomad-kernel.preinst
+if [ -f /etc/default/nomad-kernel ]; then
+  . /etc/default/nomad-kernel
   INITRD=\${INITRD:-"No"}
   export INITRD
   RPI_INITRD=\${RPI_INITRD:-"No"}
@@ -127,36 +127,36 @@ fi
 if [ -d "/etc/kernel/preinst.d" ]; then
 EOF
 if [ $BUILD_ARMHF -eq 1 ]; then
-cat <<EOF >> wlanpi-kernel.preinst
+cat <<EOF >> nomad-kernel.preinst
   run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-wp.img /etc/kernel/preinst.d
 EOF
 fi
 if [ $BUILD_ARM64 -eq 1 ]; then
-cat <<EOF >> wlanpi-kernel.preinst
+cat <<EOF >> nomad-kernel.preinst
   run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-wp.img /etc/kernel/preinst.d
 EOF
 fi
-cat <<EOF >> wlanpi-kernel.preinst
+cat <<EOF >> nomad-kernel.preinst
 fi
 EOF
 if [ $BUILD_ARMHF -eq 1 ]; then
-cat <<EOF >> wlanpi-kernel.preinst
+cat <<EOF >> nomad-kernel.preinst
 if [ -d "/etc/kernel/preinst.d/${version_armhf}" ]; then
   run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-wp.img /etc/kernel/preinst.d/${version_armhf}
 fi
 EOF
 fi
 if [ $BUILD_ARM64 -eq 1 ]; then
-cat <<EOF >> wlanpi-kernel.preinst
+cat <<EOF >> nomad-kernel.preinst
 if [ -d "/etc/kernel/preinst.d/${version_arm64}" ]; then
   run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-wp.img /etc/kernel/preinst.d/${version_arm64}
 fi
 EOF
 fi
 
-cat <<EOF >> wlanpi-kernel.postinst
-if [ -f /etc/default/wlanpi-kernel ]; then
-  . /etc/default/wlanpi-kernel
+cat <<EOF >> nomad-kernel.postinst
+if [ -f /etc/default/nomad-kernel ]; then
+  . /etc/default/nomad-kernel
   INITRD=\${INITRD:-"No"}
   export INITRD
   RPI_INITRD=\${RPI_INITRD:-"No"}
@@ -166,40 +166,40 @@ fi
 if [ -d "/etc/kernel/postinst.d" ]; then
 EOF
 if [ $BUILD_ARMHF -eq 1 ]; then
-cat <<EOF >> wlanpi-kernel.postinst
+cat <<EOF >> nomad-kernel.postinst
   run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-wp.img /etc/kernel/postinst.d
 EOF
 fi
 if [ $BUILD_ARM64 -eq 1 ]; then
-cat <<EOF >> wlanpi-kernel.postinst
+cat <<EOF >> nomad-kernel.postinst
   run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-wp.img /etc/kernel/postinst.d
 EOF
 fi
-cat <<EOF >> wlanpi-kernel.postinst
+cat <<EOF >> nomad-kernel.postinst
 fi
 EOF
 if [ $BUILD_ARMHF -eq 1 ]; then
-cat <<EOF >> wlanpi-kernel.postinst
+cat <<EOF >> nomad-kernel.postinst
 if [ -d "/etc/kernel/postinst.d/${version_armhf}" ]; then
   run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-wp.img /etc/kernel/postinst.d/${version_armhf}
 fi
 EOF
 fi
 if [ $BUILD_ARM64 -eq 1 ]; then
-cat <<EOF >> wlanpi-kernel.postinst
+cat <<EOF >> nomad-kernel.postinst
 if [ -d "/etc/kernel/postinst.d/${version_arm64}" ]; then
   run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-wp.img /etc/kernel/postinst.d/${version_arm64}
 fi
 EOF
 fi
 
-cat <<EOF >> wlanpi-kernel.postinst
+cat <<EOF >> nomad-kernel.postinst
 if [ -d /usr/share/rpikernelhack/overlays ]; then
   rmdir --ignore-fail-on-non-empty /usr/share/rpikernelhack/overlays
 fi
 EOF
 
-cat <<EOF >> wlanpi-kernel.postinst
+cat <<EOF >> nomad-kernel.postinst
 if [ -d /usr/share/rpikernelhack ]; then
   rmdir --ignore-fail-on-non-empty /usr/share/rpikernelhack
 fi
@@ -207,7 +207,7 @@ fi
 touch /run/reboot-required
 EOF
 
-for pkg in wlanpi-kernel; do
+for pkg in nomad-kernel; do
 cat << EOF >> "${pkg}.postinst"
 if ! grep -qs "$pkg" /run/reboot-required.pkgs; then
   echo "$pkg" >> /run/reboot-required.pkgs
@@ -215,15 +215,15 @@ fi
 EOF
 done
 
-printf "#DEBHELPER#\n" | tee -a wlanpi-kernel.postinst >> wlanpi-kernel.preinst
+printf "#DEBHELPER#\n" | tee -a nomad-kernel.postinst >> nomad-kernel.preinst
 
-printf "#!/bin/sh\n" > wlanpi-kernel.prerm
-printf "#!/bin/sh\n" > wlanpi-kernel.postrm
-#printf "#!/bin/sh\n" > wlanpi-kernel-headers.postinst
+printf "#!/bin/sh\n" > nomad-kernel.prerm
+printf "#!/bin/sh\n" > nomad-kernel.postrm
+#printf "#!/bin/sh\n" > nomad-kernel-headers.postinst
 
-cat <<EOF >> wlanpi-kernel.prerm
-if [ -f /etc/default/wlanpi-kernel ]; then
-  . /etc/default/wlanpi-kernel
+cat <<EOF >> nomad-kernel.prerm
+if [ -f /etc/default/nomad-kernel ]; then
+  . /etc/default/nomad-kernel
   INITRD=\${INITRD:-"No"}
   export INITRD
   RPI_INITRD=\${RPI_INITRD:-"No"}
@@ -233,36 +233,36 @@ fi
 if [ -d "/etc/kernel/prerm.d" ]; then
 EOF
 if [ $BUILD_ARMHF -eq 1 ]; then
-cat <<EOF >> wlanpi-kernel.prerm
+cat <<EOF >> nomad-kernel.prerm
   run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-wp.img /etc/kernel/prerm.d
 EOF
 fi
 if [ $BUILD_ARM64 -eq 1 ]; then
-cat <<EOF >> wlanpi-kernel.prerm
+cat <<EOF >> nomad-kernel.prerm
   run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-wp.img /etc/kernel/prerm.d
 EOF
 fi
-cat <<EOF >> wlanpi-kernel.prerm
+cat <<EOF >> nomad-kernel.prerm
 fi
 EOF
 if [ $BUILD_ARMHF -eq 1 ]; then
-cat <<EOF >> wlanpi-kernel.prerm
+cat <<EOF >> nomad-kernel.prerm
 if [ -d "/etc/kernel/prerm.d/${version_armhf}" ]; then
   run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-wp.img /etc/kernel/prerm.d/${version_armhf}
 fi
 EOF
 fi
 if [ $BUILD_ARM64 -eq 1 ]; then
-cat <<EOF >> wlanpi-kernel.prerm
+cat <<EOF >> nomad-kernel.prerm
 if [ -d "/etc/kernel/prerm.d/${version_arm64}" ]; then
   run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-wp.img /etc/kernel/prerm.d/${version_arm64}
 fi
 EOF
 fi
 
-cat <<EOF >> wlanpi-kernel.postrm
-if [ -f /etc/default/wlanpi-kernel ]; then
-  . /etc/default/wlanpi-kernel
+cat <<EOF >> nomad-kernel.postrm
+if [ -f /etc/default/nomad-kernel ]; then
+  . /etc/default/nomad-kernel
   INITRD=\${INITRD:-"No"}
   export INITRD
   RPI_INITRD=\${RPI_INITRD:-"No"}
@@ -272,27 +272,27 @@ fi
 if [ -d "/etc/kernel/postrm.d" ]; then
 EOF
 if [ $BUILD_ARMHF -eq 1 ]; then
-cat <<EOF >> wlanpi-kernel.postrm
+cat <<EOF >> nomad-kernel.postrm
   run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-wp.img /etc/kernel/postrm.d
 EOF
 fi
 if [ $BUILD_ARM64 -eq 1 ]; then
-cat <<EOF >> wlanpi-kernel.postrm
+cat <<EOF >> nomad-kernel.postrm
   run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-wp.img /etc/kernel/postrm.d
 EOF
 fi
-cat <<EOF >> wlanpi-kernel.postrm
+cat <<EOF >> nomad-kernel.postrm
 fi
 EOF
 if [ $BUILD_ARMHF -eq 1 ]; then
-cat <<EOF >> wlanpi-kernel.postrm
+cat <<EOF >> nomad-kernel.postrm
 if [ -d "/etc/kernel/postrm.d/${version_armhf}" ]; then
   run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-wp.img /etc/kernel/postrm.d/${version_armhf}
 fi
 EOF
 fi
 if [ $BUILD_ARM64 -eq 1 ]; then
-cat <<EOF >> wlanpi-kernel.postrm
+cat <<EOF >> nomad-kernel.postrm
 if [ -d "/etc/kernel/postrm.d/${version_arm64}" ]; then
   run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-wp.img /etc/kernel/postrm.d/${version_arm64}
 fi
@@ -300,9 +300,9 @@ EOF
 fi
 
 # TODO: build headers
-#cat <<EOF >> wlanpi-kernel-headers.postinst
-#if [ -f /etc/default/wlanpi-kernel ]; then
-  #. /etc/default/wlanpi-kernel
+#cat <<EOF >> nomad-kernel-headers.postinst
+#if [ -f /etc/default/nomad-kernel ]; then
+  #. /etc/default/nomad-kernel
   #INITRD=\${INITRD:-"No"}
   #export INITRD
   #RPI_INITRD=\${RPI_INITRD:-"No"}
@@ -321,6 +321,6 @@ fi
 #fi
 #EOF
 
-printf "#DEBHELPER#\n" >> wlanpi-kernel.prerm
-printf "#DEBHELPER#\n" >> wlanpi-kernel.postrm
-#printf "#DEBHELPER#\n" >> wlanpi-kernel-headers.postinst
+printf "#DEBHELPER#\n" >> nomad-kernel.prerm
+printf "#DEBHELPER#\n" >> nomad-kernel.postrm
+#printf "#DEBHELPER#\n" >> nomad-kernel-headers.postinst

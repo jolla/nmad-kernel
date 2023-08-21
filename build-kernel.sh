@@ -11,14 +11,14 @@ KERNEL_PATH="${SCRIPT_PATH}/cache/kernel"
 LOG_PATH="${SCRIPT_PATH}/logs"
 PATCHES_PATH="${SCRIPT_PATH}/kernel-patches"
 OUTPUT_PATH="${SCRIPT_PATH}/output"
-DEB_PATH="${SCRIPT_PATH}/debian/wlanpi-kernel"
+DEB_PATH="${SCRIPT_PATH}/debian/nomad-kernel"
 
 # Set default values for configurations
 KERNEL_URL="https://github.com/raspberrypi/linux.git"
 KERNEL_BRANCH="rpi-6.4.y"
 KERNEL_ARCH="arm64"
 KERNEL_DEFCONFIG="bcm2711_defconfig"
-WLANPI_DEFCONFIG="wlanpi_v7l_defconfig"
+NOMAD_DEFCONFIG="nomad_v7l_defconfig"
 KERNEL_FORCE_SYNC="0"
 CLEAN_KERNEL="0"
 SKIP_PATCHES="0"
@@ -122,14 +122,14 @@ process_arch()
             export CROSS_COMPILE="arm-linux-gnueabihf-"
             export KERNEL="kernel7l-wp"
             KERNEL_IMAGE="zImage"
-            WLANPI_DEFCONFIG="wlanpi_v7l_defconfig"
+            NOMAD_DEFCONFIG="nomad_v7l_defconfig"
             ;;
         arm64 )
             export ARCH="arm64"
             export CROSS_COMPILE="aarch64-linux-gnu-"
             export KERNEL="kernel8-wp"
             KERNEL_IMAGE="Image"
-            WLANPI_DEFCONFIG="wlanpi_v8_defconfig"
+            NOMAD_DEFCONFIG="nomad_v8_defconfig"
             ;;
         * )
             log "error" "Arch ${current_arch} not recognized."
@@ -285,12 +285,12 @@ apply_patches()
 
 generate_config()
 {
-    cp  "${SCRIPT_PATH}/${WLANPI_DEFCONFIG}" "${KERNEL_PATH}/arch/${ARCH}/configs/"
+    cp  "${SCRIPT_PATH}/${NOMAD_DEFCONFIG}" "${KERNEL_PATH}/arch/${ARCH}/configs/"
 
     pushd "${KERNEL_PATH}" >/dev/null
 
     log "ok" "Customize defconfig"
-    scripts/kconfig/merge_config.sh "${KERNEL_PATH}"/arch/"${ARCH}"/configs/{${KERNEL_DEFCONFIG},${WLANPI_DEFCONFIG}} | tee "${LOG_PATH}"/update-config.log 2>&1
+    scripts/kconfig/merge_config.sh "${KERNEL_PATH}"/arch/"${ARCH}"/configs/{${KERNEL_DEFCONFIG},${NOMAD_DEFCONFIG}} | tee "${LOG_PATH}"/update-config.log 2>&1
 
     if grep -q "Actual value:" "${LOG_PATH}"/update-config.log; then
         log "error" "Error updating defconfig. See above log to check which configs had conflicts."

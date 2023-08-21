@@ -1,12 +1,12 @@
-# Build WLAN Pi kernel
+# Build Nomad kernel
 
-Sync and build the Kernel for WLAN Pi.
+Sync and build the Kernel for Nomad.
 
 Currently the script downloads the kernel source from Raspberry Pi Linux Github page and does a
 checkout to specified branch.
 
 Then it applies the patches from `kernel-patches` folder to this kernel, updates the default
-defconfig with `wlanpi_defconfig`, builds the kernel and them packages it on .deb.
+defconfig with `nomad_defconfig`, builds the kernel and them packages it on .deb.
 
 Usage:
 ```bash

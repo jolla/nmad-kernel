@@ -1,4 +1,4 @@
 [submodule "sbuild-debian-package"]
 	path = sbuild-debian-package
-	url = https://github.com/WLAN-Pi/sbuild-debian-package
+	url = https://github.com/jolla/sbuild-debian-package
 	branch = main
