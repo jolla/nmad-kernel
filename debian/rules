@@ -22,7 +22,7 @@ override_dh_auto_install:
 		$(DEB_PATH)/lib/modules
 	cp -r output/boot/overlays $(DEB_PATH)/boot
 	cp output/boot/bcm271*.dtb $(DEB_PATH)/boot
-	cp output/boot/kernel8-wp.img $(DEB_PATH)/boot
+	cp output/boot/kernel8-nomad.img $(DEB_PATH)/boot
 	cp output/boot/COPYING.linux $(DEB_PATH)/boot
 	cp -r output/root/lib/modules/*v8-nomad+ $(DEB_PATH)/lib/modules
 	dh_auto_install

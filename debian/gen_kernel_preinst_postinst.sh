@@ -19,19 +19,19 @@ case "$1" in
 esac
 
 KERNEL_IMAGES="$1"
-KERNEL_IMAGES=$(echo "${KERNEL_IMAGES}" | sed "s/armhf/${BOOT_PATH//\//\\\/}\/kernel7l-wp.img/")
-KERNEL_IMAGES=$(echo "${KERNEL_IMAGES}" | sed "s/arm64/${BOOT_PATH//\//\\\/}\/kernel8-wp.img/")
+KERNEL_IMAGES=$(echo "${KERNEL_IMAGES}" | sed "s/armhf/${BOOT_PATH//\//\\\/}\/kernel7l-nomad.img/")
+KERNEL_IMAGES=$(echo "${KERNEL_IMAGES}" | sed "s/arm64/${BOOT_PATH//\//\\\/}\/kernel8-nomad.img/")
 KERNEL_IMAGES=${KERNEL_IMAGES//,/ }
 echo "KERNEL_IMAGES = ${KERNEL_IMAGES}"
 echo "BUILD_ARMHF = ${BUILD_ARMHF}"
 echo "BUILD_ARM64 = ${BUILD_ARM64}"
 
 if [ "${BUILD_ARMHF}" == "1" ]; then
-  version_armhf="$(strings ${BOOT_PATH}/kernel7l-wp.img | grep "Linux version" | cut -f 3 -d ' ' | head -n1)"
+  version_armhf="$(strings ${BOOT_PATH}/kernel7l-nomad.img | grep "Linux version" | cut -f 3 -d ' ' | head -n1)"
   echo "version_armhf = ${version_armhf}"
 fi
 if [ "${BUILD_ARM64}" == "1" ]; then
-  version_arm64="$(strings ${BOOT_PATH}/kernel8-wp.img | grep "Linux version" | cut -f 3 -d ' ' | head -n1)"
+  version_arm64="$(strings ${BOOT_PATH}/kernel8-nomad.img | grep "Linux version" | cut -f 3 -d ' ' | head -n1)"
   echo "version_arm64 = ${version_arm64}"
 fi
 
@@ -128,12 +128,12 @@ if [ -d "/etc/kernel/preinst.d" ]; then
 EOF
 if [ $BUILD_ARMHF -eq 1 ]; then
 cat <<EOF >> nomad-kernel.preinst
-  run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-wp.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-nomad.img /etc/kernel/preinst.d
 EOF
 fi
 if [ $BUILD_ARM64 -eq 1 ]; then
 cat <<EOF >> nomad-kernel.preinst
-  run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-wp.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-nomad.img /etc/kernel/preinst.d
 EOF
 fi
 cat <<EOF >> nomad-kernel.preinst
@@ -142,14 +142,14 @@ EOF
 if [ $BUILD_ARMHF -eq 1 ]; then
 cat <<EOF >> nomad-kernel.preinst
 if [ -d "/etc/kernel/preinst.d/${version_armhf}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-wp.img /etc/kernel/preinst.d/${version_armhf}
+  run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-nomad.img /etc/kernel/preinst.d/${version_armhf}
 fi
 EOF
 fi
 if [ $BUILD_ARM64 -eq 1 ]; then
 cat <<EOF >> nomad-kernel.preinst
 if [ -d "/etc/kernel/preinst.d/${version_arm64}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-wp.img /etc/kernel/preinst.d/${version_arm64}
+  run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-nomad.img /etc/kernel/preinst.d/${version_arm64}
 fi
 EOF
 fi
@@ -167,12 +167,12 @@ if [ -d "/etc/kernel/postinst.d" ]; then
 EOF
 if [ $BUILD_ARMHF -eq 1 ]; then
 cat <<EOF >> nomad-kernel.postinst
-  run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-wp.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-nomad.img /etc/kernel/postinst.d
 EOF
 fi
 if [ $BUILD_ARM64 -eq 1 ]; then
 cat <<EOF >> nomad-kernel.postinst
-  run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-wp.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-nomad.img /etc/kernel/postinst.d
 EOF
 fi
 cat <<EOF >> nomad-kernel.postinst
@@ -181,14 +181,14 @@ EOF
 if [ $BUILD_ARMHF -eq 1 ]; then
 cat <<EOF >> nomad-kernel.postinst
 if [ -d "/etc/kernel/postinst.d/${version_armhf}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-wp.img /etc/kernel/postinst.d/${version_armhf}
+  run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-nomad.img /etc/kernel/postinst.d/${version_armhf}
 fi
 EOF
 fi
 if [ $BUILD_ARM64 -eq 1 ]; then
 cat <<EOF >> nomad-kernel.postinst
 if [ -d "/etc/kernel/postinst.d/${version_arm64}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-wp.img /etc/kernel/postinst.d/${version_arm64}
+  run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-nomad.img /etc/kernel/postinst.d/${version_arm64}
 fi
 EOF
 fi
@@ -234,12 +234,12 @@ if [ -d "/etc/kernel/prerm.d" ]; then
 EOF
 if [ $BUILD_ARMHF -eq 1 ]; then
 cat <<EOF >> nomad-kernel.prerm
-  run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-wp.img /etc/kernel/prerm.d
+  run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-nomad.img /etc/kernel/prerm.d
 EOF
 fi
 if [ $BUILD_ARM64 -eq 1 ]; then
 cat <<EOF >> nomad-kernel.prerm
-  run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-wp.img /etc/kernel/prerm.d
+  run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-nomad.img /etc/kernel/prerm.d
 EOF
 fi
 cat <<EOF >> nomad-kernel.prerm
@@ -248,14 +248,14 @@ EOF
 if [ $BUILD_ARMHF -eq 1 ]; then
 cat <<EOF >> nomad-kernel.prerm
 if [ -d "/etc/kernel/prerm.d/${version_armhf}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-wp.img /etc/kernel/prerm.d/${version_armhf}
+  run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-nomad.img /etc/kernel/prerm.d/${version_armhf}
 fi
 EOF
 fi
 if [ $BUILD_ARM64 -eq 1 ]; then
 cat <<EOF >> nomad-kernel.prerm
 if [ -d "/etc/kernel/prerm.d/${version_arm64}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-wp.img /etc/kernel/prerm.d/${version_arm64}
+  run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-nomad.img /etc/kernel/prerm.d/${version_arm64}
 fi
 EOF
 fi
@@ -273,12 +273,12 @@ if [ -d "/etc/kernel/postrm.d" ]; then
 EOF
 if [ $BUILD_ARMHF -eq 1 ]; then
 cat <<EOF >> nomad-kernel.postrm
-  run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-wp.img /etc/kernel/postrm.d
+  run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-nomad.img /etc/kernel/postrm.d
 EOF
 fi
 if [ $BUILD_ARM64 -eq 1 ]; then
 cat <<EOF >> nomad-kernel.postrm
-  run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-wp.img /etc/kernel/postrm.d
+  run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-nomad.img /etc/kernel/postrm.d
 EOF
 fi
 cat <<EOF >> nomad-kernel.postrm
@@ -287,14 +287,14 @@ EOF
 if [ $BUILD_ARMHF -eq 1 ]; then
 cat <<EOF >> nomad-kernel.postrm
 if [ -d "/etc/kernel/postrm.d/${version_armhf}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-wp.img /etc/kernel/postrm.d/${version_armhf}
+  run-parts -v --report --exit-on-error --arg=${version_armhf} --arg=/boot/kernel7l-nomad.img /etc/kernel/postrm.d/${version_armhf}
 fi
 EOF
 fi
 if [ $BUILD_ARM64 -eq 1 ]; then
 cat <<EOF >> nomad-kernel.postrm
 if [ -d "/etc/kernel/postrm.d/${version_arm64}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-wp.img /etc/kernel/postrm.d/${version_arm64}
+  run-parts -v --report --exit-on-error --arg=${version_arm64} --arg=/boot/kernel8-nomad.img /etc/kernel/postrm.d/${version_arm64}
 fi
 EOF
 fi

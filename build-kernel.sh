@@ -120,14 +120,14 @@ process_arch()
         arm | armhf )
             export ARCH="arm"
             export CROSS_COMPILE="arm-linux-gnueabihf-"
-            export KERNEL="kernel7l-wp"
+            export KERNEL="kernel7l-nomad"
             KERNEL_IMAGE="zImage"
             NOMAD_DEFCONFIG="nomad_v7l_defconfig"
             ;;
         arm64 )
             export ARCH="arm64"
             export CROSS_COMPILE="aarch64-linux-gnu-"
-            export KERNEL="kernel8-wp"
+            export KERNEL="kernel8-nomad"
             KERNEL_IMAGE="Image"
             NOMAD_DEFCONFIG="nomad_v8_defconfig"
             ;;
