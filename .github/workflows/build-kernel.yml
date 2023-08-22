@@ -34,28 +34,5 @@ jobs:
       - name: Upload kernel
         uses: actions/upload-artifact@v3
         with:
-          name: wlanpi-kernel-${{ steps.build-kernel.outputs.package-version }}
+          name: nomad-kernel-${{ steps.build-kernel.outputs.package-version }}
           path: ${{ steps.build-kernel.outputs.deb-package }}
-
-      - name: Upload package to packagecloud
-        if: ${{ github.event.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
-        uses: danielmundi/upload-packagecloud@main
-        with:
-          package-name: ${{ steps.build-kernel.outputs.deb-package }}
-          packagecloud-username: wlanpi
-          packagecloud-repo: dev
-          packagecloud-distrib: debian/bullseye
-          packagecloud-token: ${{ secrets.PACKAGECLOUD_TOKEN }}
-
-  slack-workflow-status:
-    if: always()
-    name: Post Workflow Status to Slack
-    needs:
-      - build
-    runs-on: 'ubuntu-22.04'
-    steps:
-      - name: Slack Workflow Notification
-        uses: Gamesight/slack-workflow-status@master
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
