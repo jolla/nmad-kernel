@@ -1,4 +1,4 @@
-CONFIG_LOCALVERSION="-v8-nmad"
+CONFIG_LOCALVERSION="-v8-nomad"
 #
 # Device Drivers
 #

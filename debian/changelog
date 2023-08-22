@@ -1,4 +1,4 @@
-nmad-kernel (0.1-1) bullseye; urgency=medium
+nomad-kernel (0.1-1) bullseye; urgency=medium
 
   * Initial release.
 
