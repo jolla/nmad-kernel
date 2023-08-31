@@ -25,8 +25,8 @@ SKIP_PATCHES="0"
 DEB_ARCH="armhf"
 EXEC_FUNC=""
 NUM_CORES=$(($(nproc)/2))
-export DEBFULLNAME="Daniel Finimundi"
-export DEBEMAIL="daniel@finimundi.com"
+export DEBFULLNAME="Jerry Olla"
+export DEBEMAIL="jerryolla@gmail.com"
 
 mkdir -p "${LOG_PATH}"
 
