@@ -15,9 +15,9 @@ DEB_PATH="${SCRIPT_PATH}/debian/nomad-kernel"
 
 # Set default values for configurations
 KERNEL_URL="https://github.com/jolla/linux.git"
-KERNEL_BRANCH="rpi-6.4.y"
+KERNEL_BRANCH="rpi-5.19.y"
 KERNEL_ARCH="arm64"
-KERNEL_DEFCONFIG="nomad_bcm2711_defconfig"
+KERNEL_DEFCONFIG="bcm2711_defconfig"
 NOMAD_DEFCONFIG="nomad_v8_defconfig"
 KERNEL_FORCE_SYNC="0"
 CLEAN_KERNEL="0"
