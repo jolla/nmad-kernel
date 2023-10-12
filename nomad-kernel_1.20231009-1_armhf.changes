@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Tue, 10 Oct 2023 05:42:14 -0500
+Source: nomad-kernel
+Binary: nomad-kernel
+Architecture: armhf
+Version: 1.20231009-1
+Distribution: bullseye
+Urgency: medium
+Maintainer: Jerry Olla <jerryolla@gmail.com>
+Changed-By: Jerry Olla <jerryolla@gmail.com>
+Description:
+ nomad-kernel - Nomad - kernel
+Changes:
+ nomad-kernel (1.20231009-1) bullseye; urgency=medium
+ .
+   * Kernel version 6.6.0-rc5
+Checksums-Sha1:
+ 297ee2dbd6d6738972bf20715212dcddb987ea74 5116 nomad-kernel_1.20231009-1_armhf.buildinfo
+ 5b761404b4487c518ff022b458811644b5560c32 26080400 nomad-kernel_1.20231009-1_armhf.deb
+Checksums-Sha256:
+ b17f2d26c18095c1fe8b964c05b8c6ed7f66d632dba6c6b7589a482a69d2ca5f 5116 nomad-kernel_1.20231009-1_armhf.buildinfo
+ d23e3cb549696ca3c547259fc9811800b1da1603ec197098740692766cf83500 26080400 nomad-kernel_1.20231009-1_armhf.deb
+Files:
+ b0ac2408a58755ff5d58c0c4902913d4 5116 libs optional nomad-kernel_1.20231009-1_armhf.buildinfo
+ e8027440c229b8c07ed7182f2c527ec3 26080400 kernel optional nomad-kernel_1.20231009-1_armhf.deb

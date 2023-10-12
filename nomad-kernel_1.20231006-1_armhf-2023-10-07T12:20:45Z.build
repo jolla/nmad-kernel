@@ -1,0 +1,717 @@
+sbuild (Debian sbuild) 0.81.2ubuntu6 (16 February 2022) on wlanpi-builder
+
++==============================================================================+
+| nomad-kernel 1.20231006-1 (armhf)            Sat, 07 Oct 2023 12:20:45 +0000 |
++==============================================================================+
+
+Package: nomad-kernel
+Version: 1.20231006-1
+Source Version: 1.20231006-1
+Distribution: bullseye
+Machine Architecture: amd64
+Host Architecture: armhf
+Build Architecture: armhf
+Build Type: binary
+
+I: NOTICE: Log filtering will replace 'var/run/schroot/mount/bullseye-armhf-sbuild-a0d7cb41-fa6b-4210-a968-46a8dc7220cf' with '<<CHROOT>>'
+
++------------------------------------------------------------------------------+
+| Chroot Setup Commands                                                        |
++------------------------------------------------------------------------------+
+
+
+chmod +x /tmp/pre-build.sh; /tmp/pre-build.sh
+---------------------------------------------
+
+ semop
+Analyzing compilation unit
+Performing interprocedural optimizations
+ <*free_lang_data> {heap 796k} <visibility> {heap 796k} <build_ssa_passes> {heap 796k} <opt_local_passes> {heap 988k} <remove_symbols> {heap 988k} <targetclone> {heap 988k} <free-fnsummary> {heap 988k}Streaming LTO
+ <whole-program> {heap 988k} <fnsummary> {heap 988k} <inline> {heap 988k} <free-fnsummary> {heap 988k} <single-use> {heap 988k} <comdats> {heap 988k}Assembling functions:
+ <materialize-all-clones> {heap 988k} semop
+Time variable                                   usr           sys          wall               GGC
+ phase setup                        :   0.14 ( 29%)   0.00 (  0%)   0.14 ( 27%)    2108 kB ( 77%)
+ phase parsing                      :   0.13 ( 27%)   0.01 ( 50%)   0.14 ( 27%)     571 kB ( 21%)
+ phase opt and generate             :   0.21 ( 43%)   0.01 ( 50%)   0.22 ( 43%)      33 kB (  1%)
+ callgraph construction             :   0.00 (  0%)   0.00 (  0%)   0.02 (  4%)       0 kB (  0%)
+ callgraph ipa passes               :   0.03 (  6%)   0.00 (  0%)   0.02 (  4%)       3 kB (  0%)
+ ipa function summary               :   0.00 (  0%)   0.00 (  0%)   0.01 (  2%)       1 kB (  0%)
+ ipa dead code removal              :   0.01 (  2%)   0.00 (  0%)   0.00 (  0%)       0 kB (  0%)
+ ipa inlining heuristics            :   0.01 (  2%)   0.00 (  0%)   0.00 (  0%)       0 kB (  0%)
+ df scan insns                      :   0.01 (  2%)   0.01 ( 50%)   0.01 (  2%)       0 kB (  0%)
+ df reg dead/unused notes           :   0.01 (  2%)   0.00 (  0%)   0.00 (  0%)       0 kB (  0%)
+ preprocessing                      :   0.03 (  6%)   0.00 (  0%)   0.05 ( 10%)     286 kB ( 11%)
+ lexical analysis                   :   0.01 (  2%)   0.00 (  0%)   0.00 (  0%)       0 kB (  0%)
+ parser (global)                    :   0.06 ( 12%)   0.01 ( 50%)   0.05 ( 10%)     230 kB (  8%)
+ parser struct body                 :   0.02 (  4%)   0.00 (  0%)   0.02 (  4%)       8 kB (  0%)
+ parser enumerator list             :   0.00 (  0%)   0.00 (  0%)   0.01 (  2%)      44 kB (  2%)
+ parser function body               :   0.01 (  2%)   0.00 (  0%)   0.01 (  2%)       1 kB (  0%)
+ inline parameters                  :   0.01 (  2%)   0.00 (  0%)   0.00 (  0%)       0 kB (  0%)
+ tree gimplify                      :   0.01 (  2%)   0.00 (  0%)   0.01 (  2%)       1 kB (  0%)
+ tree CFG construction              :   0.01 (  2%)   0.00 (  0%)   0.00 (  0%)       0 kB (  0%)
+ tree SSA other                     :   0.00 (  0%)   0.00 (  0%)   0.01 (  2%)       0 kB (  0%)
+ tree switch lowering               :   0.01 (  2%)   0.00 (  0%)   0.00 (  0%)       0 kB (  0%)
+ out of ssa                         :   0.00 (  0%)   0.00 (  0%)   0.01 (  2%)       0 kB (  0%)
+ expand                             :   0.02 (  4%)   0.00 (  0%)   0.01 (  2%)       2 kB (  0%)
+ post expand cleanups               :   0.00 (  0%)   0.00 (  0%)   0.01 (  2%)       0 kB (  0%)
+ loop init                          :   0.01 (  2%)   0.00 (  0%)   0.00 (  0%)       0 kB (  0%)
+ integrated RA                      :   0.02 (  4%)   0.00 (  0%)   0.04 (  8%)      12 kB (  0%)
+ LRA non-specific                   :   0.03 (  6%)   0.00 (  0%)   0.02 (  4%)       0 kB (  0%)
+ LRA reload inheritance             :   0.00 (  0%)   0.00 (  0%)   0.01 (  2%)       0 kB (  0%)
+ machine dep reorg                  :   0.01 (  2%)   0.00 (  0%)   0.01 (  2%)       0 kB (  0%)
+ final                              :   0.01 (  2%)   0.00 (  0%)   0.01 (  2%)       0 kB (  0%)
+ initialize rtl                     :   0.03 (  6%)   0.00 (  0%)   0.04 (  8%)       4 kB (  0%)
+ TOTAL                              :   0.49          0.02          0.51           2724 kB
+
+I: Finished running 'chmod +x /tmp/pre-build.sh; /tmp/pre-build.sh'.
+
+Finished processing commands.
+--------------------------------------------------------------------------------
+I: NOTICE: Log filtering will replace 'build/nomad-kernel-l9S9Uc/resolver-pZaSfT' with '<<RESOLVERDIR>>'
+
++------------------------------------------------------------------------------+
+| Update chroot                                                                |
++------------------------------------------------------------------------------+
+
+Get:1 http://deb.debian.org/debian bullseye InRelease [116 kB]
+Get:2 http://deb.debian.org/debian bullseye/main Sources [8502 kB]
+Get:3 http://deb.debian.org/debian bullseye/main armhf Packages [7838 kB]
+Fetched 16.5 MB in 14s (1203 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Calculating upgrade...
+The following packages will be upgraded:
+  adduser base-files bash debian-archive-keyring dpkg dpkg-dev gpgv grep gzip
+  libc-bin libc-dev-bin libc6 libc6-dev libdpkg-perl libgnutls30
+  libgssapi-krb5-2 libk5crypto3 libkrb5-3 libkrb5support0 liblzma5
+  libpcre2-8-0 libssl1.1 libsystemd0 libtasn1-6 libtinfo6 libtirpc-common
+  libtirpc-dev libtirpc3 libudev1 linux-libc-dev ncurses-base ncurses-bin
+  tzdata xz-utils zlib1g
+35 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 22.1 MB of archives.
+After this operation, 569 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian bullseye/main armhf base-files armhf 11.1+deb11u8 [70.2 kB]
+Get:2 http://deb.debian.org/debian bullseye/main armhf bash armhf 5.1-2+deb11u1 [1351 kB]
+Get:3 http://deb.debian.org/debian bullseye/main armhf dpkg armhf 1.20.13 [2493 kB]
+Get:4 http://deb.debian.org/debian bullseye/main armhf grep armhf 3.6-1+deb11u1 [387 kB]
+Get:5 http://deb.debian.org/debian bullseye/main armhf gzip armhf 1.10-4+deb11u1 [128 kB]
+Get:6 http://deb.debian.org/debian bullseye/main armhf ncurses-bin armhf 6.2+20201114-2+deb11u2 [421 kB]
+Get:7 http://deb.debian.org/debian bullseye/main armhf libc6-dev armhf 2.31-13+deb11u6 [1875 kB]
+Get:8 http://deb.debian.org/debian bullseye/main armhf libc-dev-bin armhf 2.31-13+deb11u6 [271 kB]
+Get:9 http://deb.debian.org/debian bullseye/main armhf linux-libc-dev armhf 5.10.197-1 [1636 kB]
+Get:10 http://deb.debian.org/debian bullseye/main armhf libc6 armhf 2.31-13+deb11u6 [2335 kB]
+Get:11 http://deb.debian.org/debian bullseye/main armhf libc-bin armhf 2.31-13+deb11u6 [717 kB]
+Get:12 http://deb.debian.org/debian bullseye/main armhf ncurses-base all 6.2+20201114-2+deb11u2 [272 kB]
+Get:13 http://deb.debian.org/debian bullseye/main armhf libsystemd0 armhf 247.3-7+deb11u4 [351 kB]
+Get:14 http://deb.debian.org/debian bullseye/main armhf adduser all 3.118+deb11u1 [241 kB]
+Get:15 http://deb.debian.org/debian bullseye/main armhf debian-archive-keyring all 2021.1.1+deb11u1 [110 kB]
+Get:16 http://deb.debian.org/debian bullseye/main armhf zlib1g armhf 1:1.2.11.dfsg-2+deb11u2 [85.0 kB]
+Get:17 http://deb.debian.org/debian bullseye/main armhf gpgv armhf 2.2.27-2+deb11u2 [597 kB]
+Get:18 http://deb.debian.org/debian bullseye/main armhf libtasn1-6 armhf 4.16.0-2+deb11u1 [50.4 kB]
+Get:19 http://deb.debian.org/debian bullseye/main armhf libgnutls30 armhf 3.7.1-5+deb11u3 [1283 kB]
+Get:20 http://deb.debian.org/debian bullseye/main armhf libk5crypto3 armhf 1.18.3-6+deb11u4 [111 kB]
+Get:21 http://deb.debian.org/debian bullseye/main armhf libkrb5support0 armhf 1.18.3-6+deb11u4 [62.7 kB]
+Get:22 http://deb.debian.org/debian bullseye/main armhf libkrb5-3 armhf 1.18.3-6+deb11u4 [319 kB]
+Get:23 http://deb.debian.org/debian bullseye/main armhf libgssapi-krb5-2 armhf 1.18.3-6+deb11u4 [143 kB]
+Get:24 http://deb.debian.org/debian bullseye/main armhf libssl1.1 armhf 1.1.1w-0+deb11u1 [1319 kB]
+Get:25 http://deb.debian.org/debian bullseye/main armhf liblzma5 armhf 5.2.5-2.1~deb11u1 [159 kB]
+Get:26 http://deb.debian.org/debian bullseye/main armhf libpcre2-8-0 armhf 10.36-2+deb11u1 [213 kB]
+Get:27 http://deb.debian.org/debian bullseye/main armhf libtinfo6 armhf 6.2+20201114-2+deb11u2 [328 kB]
+Get:28 http://deb.debian.org/debian bullseye/main armhf libtirpc-common all 1.3.1-1+deb11u1 [13.5 kB]
+Get:29 http://deb.debian.org/debian bullseye/main armhf libtirpc-dev armhf 1.3.1-1+deb11u1 [182 kB]
+Get:30 http://deb.debian.org/debian bullseye/main armhf libtirpc3 armhf 1.3.1-1+deb11u1 [72.5 kB]
+Get:31 http://deb.debian.org/debian bullseye/main armhf libudev1 armhf 247.3-7+deb11u4 [162 kB]
+Get:32 http://deb.debian.org/debian bullseye/main armhf tzdata all 2021a-1+deb11u10 [286 kB]
+Get:33 http://deb.debian.org/debian bullseye/main armhf xz-utils armhf 5.2.5-2.1~deb11u1 [219 kB]
+Get:34 http://deb.debian.org/debian bullseye/main armhf dpkg-dev all 1.20.13 [2314 kB]
+Get:35 http://deb.debian.org/debian bullseye/main armhf libdpkg-perl all 1.20.13 [1552 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 22.1 MB in 1s (15.9 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12124 files and directories currently installed.)
+Preparing to unpack .../base-files_11.1+deb11u8_armhf.deb ...
+Unpacking base-files (11.1+deb11u8) over (11.1+deb11u3) ...
+Setting up base-files (11.1+deb11u8) ...
+Installing new version of config file /etc/debian_version ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12124 files and directories currently installed.)
+Preparing to unpack .../bash_5.1-2+deb11u1_armhf.deb ...
+Unpacking bash (5.1-2+deb11u1) over (5.1-2+b3) ...
+Setting up bash (5.1-2+deb11u1) ...
+update-alternatives: using /usr/share/man/man7/bash-builtins.7.gz to provide /usr/share/man/man7/builtins.7.gz (builtins.7.gz) in auto mode
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12123 files and directories currently installed.)
+Preparing to unpack .../dpkg_1.20.13_armhf.deb ...
+Unpacking dpkg (1.20.13) over (1.20.9) ...
+Setting up dpkg (1.20.13) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12132 files and directories currently installed.)
+Preparing to unpack .../grep_3.6-1+deb11u1_armhf.deb ...
+Unpacking grep (3.6-1+deb11u1) over (3.6-1) ...
+Setting up grep (3.6-1+deb11u1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12132 files and directories currently installed.)
+Preparing to unpack .../gzip_1.10-4+deb11u1_armhf.deb ...
+Unpacking gzip (1.10-4+deb11u1) over (1.10-4) ...
+Setting up gzip (1.10-4+deb11u1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12132 files and directories currently installed.)
+Preparing to unpack .../ncurses-bin_6.2+20201114-2+deb11u2_armhf.deb ...
+Unpacking ncurses-bin (6.2+20201114-2+deb11u2) over (6.2+20201114-2) ...
+Setting up ncurses-bin (6.2+20201114-2+deb11u2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12132 files and directories currently installed.)
+Preparing to unpack .../libc6-dev_2.31-13+deb11u6_armhf.deb ...
+Unpacking libc6-dev:armhf (2.31-13+deb11u6) over (2.31-13+deb11u3) ...
+Preparing to unpack .../libc-dev-bin_2.31-13+deb11u6_armhf.deb ...
+Unpacking libc-dev-bin (2.31-13+deb11u6) over (2.31-13+deb11u3) ...
+Preparing to unpack .../linux-libc-dev_5.10.197-1_armhf.deb ...
+Unpacking linux-libc-dev:armhf (5.10.197-1) over (5.10.106-1) ...
+Preparing to unpack .../libc6_2.31-13+deb11u6_armhf.deb ...
+Unpacking libc6:armhf (2.31-13+deb11u6) over (2.31-13+deb11u3) ...
+Setting up libc6:armhf (2.31-13+deb11u6) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../libc-bin_2.31-13+deb11u6_armhf.deb ...
+Unpacking libc-bin (2.31-13+deb11u6) over (2.31-13+deb11u3) ...
+Setting up libc-bin (2.31-13+deb11u6) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../ncurses-base_6.2+20201114-2+deb11u2_all.deb ...
+Unpacking ncurses-base (6.2+20201114-2+deb11u2) over (6.2+20201114-2) ...
+Setting up ncurses-base (6.2+20201114-2+deb11u2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../libsystemd0_247.3-7+deb11u4_armhf.deb ...
+Unpacking libsystemd0:armhf (247.3-7+deb11u4) over (247.3-7) ...
+Setting up libsystemd0:armhf (247.3-7+deb11u4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../adduser_3.118+deb11u1_all.deb ...
+Unpacking adduser (3.118+deb11u1) over (3.118) ...
+Setting up adduser (3.118+deb11u1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../debian-archive-keyring_2021.1.1+deb11u1_all.deb ...
+Unpacking debian-archive-keyring (2021.1.1+deb11u1) over (2021.1.1) ...
+Setting up debian-archive-keyring (2021.1.1+deb11u1) ...
+Removing obsolete conffile /etc/apt/trusted.gpg.d/debian-archive-stretch-automatic.gpg ...
+Removing obsolete conffile /etc/apt/trusted.gpg.d/debian-archive-stretch-security-automatic.gpg ...
+Removing obsolete conffile /etc/apt/trusted.gpg.d/debian-archive-stretch-stable.gpg ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../zlib1g_1%3a1.2.11.dfsg-2+deb11u2_armhf.deb ...
+Unpacking zlib1g:armhf (1:1.2.11.dfsg-2+deb11u2) over (1:1.2.11.dfsg-2) ...
+Setting up zlib1g:armhf (1:1.2.11.dfsg-2+deb11u2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../gpgv_2.2.27-2+deb11u2_armhf.deb ...
+Unpacking gpgv (2.2.27-2+deb11u2) over (2.2.27-2+deb11u1) ...
+Setting up gpgv (2.2.27-2+deb11u2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../libtasn1-6_4.16.0-2+deb11u1_armhf.deb ...
+Unpacking libtasn1-6:armhf (4.16.0-2+deb11u1) over (4.16.0-2) ...
+Setting up libtasn1-6:armhf (4.16.0-2+deb11u1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../libgnutls30_3.7.1-5+deb11u3_armhf.deb ...
+Unpacking libgnutls30:armhf (3.7.1-5+deb11u3) over (3.7.1-5) ...
+Setting up libgnutls30:armhf (3.7.1-5+deb11u3) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../libk5crypto3_1.18.3-6+deb11u4_armhf.deb ...
+Unpacking libk5crypto3:armhf (1.18.3-6+deb11u4) over (1.18.3-6+deb11u1) ...
+Setting up libk5crypto3:armhf (1.18.3-6+deb11u4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../libkrb5support0_1.18.3-6+deb11u4_armhf.deb ...
+Unpacking libkrb5support0:armhf (1.18.3-6+deb11u4) over (1.18.3-6+deb11u1) ...
+Setting up libkrb5support0:armhf (1.18.3-6+deb11u4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../libkrb5-3_1.18.3-6+deb11u4_armhf.deb ...
+Unpacking libkrb5-3:armhf (1.18.3-6+deb11u4) over (1.18.3-6+deb11u1) ...
+Setting up libkrb5-3:armhf (1.18.3-6+deb11u4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../libgssapi-krb5-2_1.18.3-6+deb11u4_armhf.deb ...
+Unpacking libgssapi-krb5-2:armhf (1.18.3-6+deb11u4) over (1.18.3-6+deb11u1) ...
+Setting up libgssapi-krb5-2:armhf (1.18.3-6+deb11u4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../libssl1.1_1.1.1w-0+deb11u1_armhf.deb ...
+Unpacking libssl1.1:armhf (1.1.1w-0+deb11u1) over (1.1.1n-0+deb11u1) ...
+Setting up libssl1.1:armhf (1.1.1w-0+deb11u1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../liblzma5_5.2.5-2.1~deb11u1_armhf.deb ...
+Unpacking liblzma5:armhf (5.2.5-2.1~deb11u1) over (5.2.5-2) ...
+Setting up liblzma5:armhf (5.2.5-2.1~deb11u1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../libpcre2-8-0_10.36-2+deb11u1_armhf.deb ...
+Unpacking libpcre2-8-0:armhf (10.36-2+deb11u1) over (10.36-2) ...
+Setting up libpcre2-8-0:armhf (10.36-2+deb11u1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../libtinfo6_6.2+20201114-2+deb11u2_armhf.deb ...
+Unpacking libtinfo6:armhf (6.2+20201114-2+deb11u2) over (6.2+20201114-2) ...
+Setting up libtinfo6:armhf (6.2+20201114-2+deb11u2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../libtirpc-common_1.3.1-1+deb11u1_all.deb ...
+Unpacking libtirpc-common (1.3.1-1+deb11u1) over (1.3.1-1) ...
+Setting up libtirpc-common (1.3.1-1+deb11u1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../libtirpc-dev_1.3.1-1+deb11u1_armhf.deb ...
+Unpacking libtirpc-dev:armhf (1.3.1-1+deb11u1) over (1.3.1-1) ...
+Preparing to unpack .../libtirpc3_1.3.1-1+deb11u1_armhf.deb ...
+Unpacking libtirpc3:armhf (1.3.1-1+deb11u1) over (1.3.1-1) ...
+Setting up libtirpc3:armhf (1.3.1-1+deb11u1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../libudev1_247.3-7+deb11u4_armhf.deb ...
+Unpacking libudev1:armhf (247.3-7+deb11u4) over (247.3-7) ...
+Setting up libudev1:armhf (247.3-7+deb11u4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12131 files and directories currently installed.)
+Preparing to unpack .../tzdata_2021a-1+deb11u10_all.deb ...
+Unpacking tzdata (2021a-1+deb11u10) over (2021a-1+deb11u2) ...
+Preparing to unpack .../xz-utils_5.2.5-2.1~deb11u1_armhf.deb ...
+Unpacking xz-utils (5.2.5-2.1~deb11u1) over (5.2.5-2) ...
+Preparing to unpack .../dpkg-dev_1.20.13_all.deb ...
+Unpacking dpkg-dev (1.20.13) over (1.20.9) ...
+Preparing to unpack .../libdpkg-perl_1.20.13_all.deb ...
+Unpacking libdpkg-perl (1.20.13) over (1.20.9) ...
+Setting up linux-libc-dev:armhf (5.10.197-1) ...
+Setting up tzdata (2021a-1+deb11u10) ...
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Sat Oct  7 12:22:25 UTC 2023.
+Universal Time is now:  Sat Oct  7 12:22:25 UTC 2023.
+Run 'dpkg-reconfigure tzdata' if you wish to change it.
+
+Setting up libtirpc-dev:armhf (1.3.1-1+deb11u1) ...
+Setting up xz-utils (5.2.5-2.1~deb11u1) ...
+Setting up libdpkg-perl (1.20.13) ...
+Setting up libc-dev-bin (2.31-13+deb11u6) ...
+Setting up dpkg-dev (1.20.13) ...
+Setting up libc6-dev:armhf (2.31-13+deb11u6) ...
+Processing triggers for libc-bin (2.31-13+deb11u6) ...
+
++------------------------------------------------------------------------------+
+| Fetch source files                                                           |
++------------------------------------------------------------------------------+
+
+
+Local sources
+-------------
+
+../nomad-kernel_1.20231006-1.dsc exists in ..; copying to chroot
+I: NOTICE: Log filtering will replace 'build/nomad-kernel-l9S9Uc/nomad-kernel-1.20231006' with '<<PKGBUILDDIR>>'
+I: NOTICE: Log filtering will replace 'build/nomad-kernel-l9S9Uc' with '<<BUILDDIR>>'
+
++------------------------------------------------------------------------------+
+| Install package build dependencies                                           |
++------------------------------------------------------------------------------+
+
+
+Setup apt archive
+-----------------
+
+Merged Build-Depends: debhelper (>= 10), bc, flex, bison, libssl-dev, rsync, build-essential, fakeroot
+Filtered Build-Depends: debhelper (>= 10), bc, flex, bison, libssl-dev, rsync, build-essential, fakeroot
+dpkg-deb: building package 'sbuild-build-depends-main-dummy' in '/<<RESOLVERDIR>>/apt_archive/sbuild-build-depends-main-dummy.deb'.
+Ign:1 copy:/<<RESOLVERDIR>>/apt_archive ./ InRelease
+Get:2 copy:/<<RESOLVERDIR>>/apt_archive ./ Release [957 B]
+Ign:3 copy:/<<RESOLVERDIR>>/apt_archive ./ Release.gpg
+Get:4 copy:/<<RESOLVERDIR>>/apt_archive ./ Sources [431 B]
+Get:5 copy:/<<RESOLVERDIR>>/apt_archive ./ Packages [469 B]
+Fetched 1857 B in 0s (4757 B/s)
+Reading package lists...
+Reading package lists...
+
+Install main build dependencies (apt-based resolver)
+----------------------------------------------------
+
+Installing build dependencies
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  autoconf automake autopoint autotools-dev bc bison bsdextrautils debhelper
+  dh-autoreconf dh-strip-nondeterminism dwz file flex gettext gettext-base
+  groff-base intltool-debian libarchive-zip-perl libdebhelper-perl libelf1
+  libfile-stripnondeterminism-perl libicu67 libmagic-mgc libmagic1 libncurses6
+  libpipeline1 libpopt0 libreadline8 libsigsegv2 libssl-dev
+  libsub-override-perl libtool libuchardet0 libxml2 m4 man-db po-debconf
+  readline-common rsync sensible-utils
+Suggested packages:
+  autoconf-archive gnu-standards autoconf-doc bison-doc dh-make flex-doc
+  gettext-doc libasprintf-dev libgettextpo-dev groff libssl-doc libtool-doc
+  gfortran | fortran95-compiler gcj-jdk m4-doc apparmor less www-browser
+  libmail-box-perl readline-doc openssh-client openssh-server python3
+Recommended packages:
+  libfl-dev curl | wget | lynx libarchive-cpio-perl libgpm2 libltdl-dev
+  libmail-sendmail-perl
+The following NEW packages will be installed:
+  autoconf automake autopoint autotools-dev bc bison bsdextrautils debhelper
+  dh-autoreconf dh-strip-nondeterminism dwz file flex gettext gettext-base
+  groff-base intltool-debian libarchive-zip-perl libdebhelper-perl libelf1
+  libfile-stripnondeterminism-perl libicu67 libmagic-mgc libmagic1 libncurses6
+  libpipeline1 libpopt0 libreadline8 libsigsegv2 libssl-dev
+  libsub-override-perl libtool libuchardet0 libxml2 m4 man-db po-debconf
+  readline-common rsync sbuild-build-depends-main-dummy sensible-utils
+0 upgraded, 41 newly installed, 0 to remove and 0 not upgraded.
+Need to get 21.6 MB of archives.
+After this operation, 74.0 MB of additional disk space will be used.
+Get:1 copy:/<<RESOLVERDIR>>/apt_archive ./ sbuild-build-depends-main-dummy 0.invalid.0 [888 B]
+Get:2 http://deb.debian.org/debian bullseye/main armhf bsdextrautils armhf 2.36.1-8+deb11u1 [139 kB]
+Get:3 http://deb.debian.org/debian bullseye/main armhf libuchardet0 armhf 0.0.7-1 [65.0 kB]
+Get:4 http://deb.debian.org/debian bullseye/main armhf groff-base armhf 1.22.4-6 [847 kB]
+Get:5 http://deb.debian.org/debian bullseye/main armhf libpipeline1 armhf 1.5.3-1 [30.1 kB]
+Get:6 http://deb.debian.org/debian bullseye/main armhf man-db armhf 2.9.4-2 [1319 kB]
+Get:7 http://deb.debian.org/debian bullseye/main armhf libsigsegv2 armhf 2.13-1 [34.0 kB]
+Get:8 http://deb.debian.org/debian bullseye/main armhf m4 armhf 1.4.18-5 [192 kB]
+Get:9 http://deb.debian.org/debian bullseye/main armhf flex armhf 2.6.4-8 [424 kB]
+Get:10 http://deb.debian.org/debian bullseye/main armhf libpopt0 armhf 1.18-2 [46.9 kB]
+Get:11 http://deb.debian.org/debian bullseye/main armhf rsync armhf 3.2.3-4+deb11u1 [378 kB]
+Get:12 http://deb.debian.org/debian bullseye/main armhf readline-common all 8.1-1 [73.7 kB]
+Get:13 http://deb.debian.org/debian bullseye/main armhf libreadline8 armhf 8.1-1 [147 kB]
+Get:14 http://deb.debian.org/debian bullseye/main armhf sensible-utils all 0.0.14 [14.8 kB]
+Get:15 http://deb.debian.org/debian bullseye/main armhf libmagic-mgc armhf 1:5.39-3+deb11u1 [273 kB]
+Get:16 http://deb.debian.org/debian bullseye/main armhf libmagic1 armhf 1:5.39-3+deb11u1 [120 kB]
+Get:17 http://deb.debian.org/debian bullseye/main armhf file armhf 1:5.39-3+deb11u1 [68.2 kB]
+Get:18 http://deb.debian.org/debian bullseye/main armhf gettext-base armhf 0.21-4 [171 kB]
+Get:19 http://deb.debian.org/debian bullseye/main armhf autoconf all 2.69-14 [313 kB]
+Get:20 http://deb.debian.org/debian bullseye/main armhf autotools-dev all 20180224.1+nmu1 [77.1 kB]
+Get:21 http://deb.debian.org/debian bullseye/main armhf automake all 1:1.16.3-2 [814 kB]
+Get:22 http://deb.debian.org/debian bullseye/main armhf autopoint all 0.21-4 [510 kB]
+Get:23 http://deb.debian.org/debian bullseye/main armhf libncurses6 armhf 6.2+20201114-2+deb11u2 [80.6 kB]
+Get:24 http://deb.debian.org/debian bullseye/main armhf bc armhf 1.07.1-2+b2 [104 kB]
+Get:25 http://deb.debian.org/debian bullseye/main armhf bison armhf 2:3.7.5+dfsg-1 [1072 kB]
+Get:26 http://deb.debian.org/debian bullseye/main armhf libdebhelper-perl all 13.3.4 [189 kB]
+Get:27 http://deb.debian.org/debian bullseye/main armhf libtool all 2.4.6-15 [513 kB]
+Get:28 http://deb.debian.org/debian bullseye/main armhf dh-autoreconf all 20 [17.1 kB]
+Get:29 http://deb.debian.org/debian bullseye/main armhf libarchive-zip-perl all 1.68-1 [104 kB]
+Get:30 http://deb.debian.org/debian bullseye/main armhf libsub-override-perl all 0.09-2 [10.2 kB]
+Get:31 http://deb.debian.org/debian bullseye/main armhf libfile-stripnondeterminism-perl all 1.12.0-1 [26.3 kB]
+Get:32 http://deb.debian.org/debian bullseye/main armhf dh-strip-nondeterminism all 1.12.0-1 [15.4 kB]
+Get:33 http://deb.debian.org/debian bullseye/main armhf libelf1 armhf 0.183-1 [161 kB]
+Get:34 http://deb.debian.org/debian bullseye/main armhf dwz armhf 0.13+20210201-1 [179 kB]
+Get:35 http://deb.debian.org/debian bullseye/main armhf libicu67 armhf 67.1-7 [8319 kB]
+Get:36 http://deb.debian.org/debian bullseye/main armhf libxml2 armhf 2.9.10+dfsg-6.7+deb11u4 [602 kB]
+Get:37 http://deb.debian.org/debian bullseye/main armhf gettext armhf 0.21-4 [1243 kB]
+Get:38 http://deb.debian.org/debian bullseye/main armhf intltool-debian all 0.35.0+20060710.5 [26.8 kB]
+Get:39 http://deb.debian.org/debian bullseye/main armhf po-debconf all 1.0.21+nmu1 [248 kB]
+Get:40 http://deb.debian.org/debian bullseye/main armhf debhelper all 13.3.4 [1049 kB]
+Get:41 http://deb.debian.org/debian bullseye/main armhf libssl-dev armhf 1.1.1w-0+deb11u1 [1616 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 21.6 MB in 1s (17.8 MB/s)
+Selecting previously unselected package bsdextrautils.
+(Reading database ... 12174 files and directories currently installed.)
+Preparing to unpack .../00-bsdextrautils_2.36.1-8+deb11u1_armhf.deb ...
+Unpacking bsdextrautils (2.36.1-8+deb11u1) ...
+Selecting previously unselected package libuchardet0:armhf.
+Preparing to unpack .../01-libuchardet0_0.0.7-1_armhf.deb ...
+Unpacking libuchardet0:armhf (0.0.7-1) ...
+Selecting previously unselected package groff-base.
+Preparing to unpack .../02-groff-base_1.22.4-6_armhf.deb ...
+Unpacking groff-base (1.22.4-6) ...
+Selecting previously unselected package libpipeline1:armhf.
+Preparing to unpack .../03-libpipeline1_1.5.3-1_armhf.deb ...
+Unpacking libpipeline1:armhf (1.5.3-1) ...
+Selecting previously unselected package man-db.
+Preparing to unpack .../04-man-db_2.9.4-2_armhf.deb ...
+Unpacking man-db (2.9.4-2) ...
+Selecting previously unselected package libsigsegv2:armhf.
+Preparing to unpack .../05-libsigsegv2_2.13-1_armhf.deb ...
+Unpacking libsigsegv2:armhf (2.13-1) ...
+Selecting previously unselected package m4.
+Preparing to unpack .../06-m4_1.4.18-5_armhf.deb ...
+Unpacking m4 (1.4.18-5) ...
+Selecting previously unselected package flex.
+Preparing to unpack .../07-flex_2.6.4-8_armhf.deb ...
+Unpacking flex (2.6.4-8) ...
+Selecting previously unselected package libpopt0:armhf.
+Preparing to unpack .../08-libpopt0_1.18-2_armhf.deb ...
+Unpacking libpopt0:armhf (1.18-2) ...
+Selecting previously unselected package rsync.
+Preparing to unpack .../09-rsync_3.2.3-4+deb11u1_armhf.deb ...
+Unpacking rsync (3.2.3-4+deb11u1) ...
+Selecting previously unselected package readline-common.
+Preparing to unpack .../10-readline-common_8.1-1_all.deb ...
+Unpacking readline-common (8.1-1) ...
+Selecting previously unselected package libreadline8:armhf.
+Preparing to unpack .../11-libreadline8_8.1-1_armhf.deb ...
+Unpacking libreadline8:armhf (8.1-1) ...
+Selecting previously unselected package sensible-utils.
+Preparing to unpack .../12-sensible-utils_0.0.14_all.deb ...
+Unpacking sensible-utils (0.0.14) ...
+Selecting previously unselected package libmagic-mgc.
+Preparing to unpack .../13-libmagic-mgc_1%3a5.39-3+deb11u1_armhf.deb ...
+Unpacking libmagic-mgc (1:5.39-3+deb11u1) ...
+Selecting previously unselected package libmagic1:armhf.
+Preparing to unpack .../14-libmagic1_1%3a5.39-3+deb11u1_armhf.deb ...
+Unpacking libmagic1:armhf (1:5.39-3+deb11u1) ...
+Selecting previously unselected package file.
+Preparing to unpack .../15-file_1%3a5.39-3+deb11u1_armhf.deb ...
+Unpacking file (1:5.39-3+deb11u1) ...
+Selecting previously unselected package gettext-base.
+Preparing to unpack .../16-gettext-base_0.21-4_armhf.deb ...
+Unpacking gettext-base (0.21-4) ...
+Selecting previously unselected package autoconf.
+Preparing to unpack .../17-autoconf_2.69-14_all.deb ...
+Unpacking autoconf (2.69-14) ...
+Selecting previously unselected package autotools-dev.
+Preparing to unpack .../18-autotools-dev_20180224.1+nmu1_all.deb ...
+Unpacking autotools-dev (20180224.1+nmu1) ...
+Selecting previously unselected package automake.
+Preparing to unpack .../19-automake_1%3a1.16.3-2_all.deb ...
+Unpacking automake (1:1.16.3-2) ...
+Selecting previously unselected package autopoint.
+Preparing to unpack .../20-autopoint_0.21-4_all.deb ...
+Unpacking autopoint (0.21-4) ...
+Selecting previously unselected package libncurses6:armhf.
+Preparing to unpack .../21-libncurses6_6.2+20201114-2+deb11u2_armhf.deb ...
+Unpacking libncurses6:armhf (6.2+20201114-2+deb11u2) ...
+Selecting previously unselected package bc.
+Preparing to unpack .../22-bc_1.07.1-2+b2_armhf.deb ...
+Unpacking bc (1.07.1-2+b2) ...
+Selecting previously unselected package bison.
+Preparing to unpack .../23-bison_2%3a3.7.5+dfsg-1_armhf.deb ...
+Unpacking bison (2:3.7.5+dfsg-1) ...
+Selecting previously unselected package libdebhelper-perl.
+Preparing to unpack .../24-libdebhelper-perl_13.3.4_all.deb ...
+Unpacking libdebhelper-perl (13.3.4) ...
+Selecting previously unselected package libtool.
+Preparing to unpack .../25-libtool_2.4.6-15_all.deb ...
+Unpacking libtool (2.4.6-15) ...
+Selecting previously unselected package dh-autoreconf.
+Preparing to unpack .../26-dh-autoreconf_20_all.deb ...
+Unpacking dh-autoreconf (20) ...
+Selecting previously unselected package libarchive-zip-perl.
+Preparing to unpack .../27-libarchive-zip-perl_1.68-1_all.deb ...
+Unpacking libarchive-zip-perl (1.68-1) ...
+Selecting previously unselected package libsub-override-perl.
+Preparing to unpack .../28-libsub-override-perl_0.09-2_all.deb ...
+Unpacking libsub-override-perl (0.09-2) ...
+Selecting previously unselected package libfile-stripnondeterminism-perl.
+Preparing to unpack .../29-libfile-stripnondeterminism-perl_1.12.0-1_all.deb ...
+Unpacking libfile-stripnondeterminism-perl (1.12.0-1) ...
+Selecting previously unselected package dh-strip-nondeterminism.
+Preparing to unpack .../30-dh-strip-nondeterminism_1.12.0-1_all.deb ...
+Unpacking dh-strip-nondeterminism (1.12.0-1) ...
+Selecting previously unselected package libelf1:armhf.
+Preparing to unpack .../31-libelf1_0.183-1_armhf.deb ...
+Unpacking libelf1:armhf (0.183-1) ...
+Selecting previously unselected package dwz.
+Preparing to unpack .../32-dwz_0.13+20210201-1_armhf.deb ...
+Unpacking dwz (0.13+20210201-1) ...
+Selecting previously unselected package libicu67:armhf.
+Preparing to unpack .../33-libicu67_67.1-7_armhf.deb ...
+Unpacking libicu67:armhf (67.1-7) ...
+Selecting previously unselected package libxml2:armhf.
+Preparing to unpack .../34-libxml2_2.9.10+dfsg-6.7+deb11u4_armhf.deb ...
+Unpacking libxml2:armhf (2.9.10+dfsg-6.7+deb11u4) ...
+Selecting previously unselected package gettext.
+Preparing to unpack .../35-gettext_0.21-4_armhf.deb ...
+Unpacking gettext (0.21-4) ...
+Selecting previously unselected package intltool-debian.
+Preparing to unpack .../36-intltool-debian_0.35.0+20060710.5_all.deb ...
+Unpacking intltool-debian (0.35.0+20060710.5) ...
+Selecting previously unselected package po-debconf.
+Preparing to unpack .../37-po-debconf_1.0.21+nmu1_all.deb ...
+Unpacking po-debconf (1.0.21+nmu1) ...
+Selecting previously unselected package debhelper.
+Preparing to unpack .../38-debhelper_13.3.4_all.deb ...
+Unpacking debhelper (13.3.4) ...
+Selecting previously unselected package libssl-dev:armhf.
+Preparing to unpack .../39-libssl-dev_1.1.1w-0+deb11u1_armhf.deb ...
+Unpacking libssl-dev:armhf (1.1.1w-0+deb11u1) ...
+Selecting previously unselected package sbuild-build-depends-main-dummy.
+Preparing to unpack .../40-sbuild-build-depends-main-dummy_0.invalid.0_armhf.deb ...
+Unpacking sbuild-build-depends-main-dummy (0.invalid.0) ...
+Setting up libpipeline1:armhf (1.5.3-1) ...
+Setting up bsdextrautils (2.36.1-8+deb11u1) ...
+update-alternatives: using /usr/bin/write.ul to provide /usr/bin/write (write) in auto mode
+Setting up libicu67:armhf (67.1-7) ...
+Setting up libmagic-mgc (1:5.39-3+deb11u1) ...
+Setting up libarchive-zip-perl (1.68-1) ...
+Setting up libdebhelper-perl (13.3.4) ...
+Setting up libmagic1:armhf (1:5.39-3+deb11u1) ...
+Setting up gettext-base (0.21-4) ...
+Setting up file (1:5.39-3+deb11u1) ...
+Setting up autotools-dev (20180224.1+nmu1) ...
+Setting up libncurses6:armhf (6.2+20201114-2+deb11u2) ...
+Setting up libsigsegv2:armhf (2.13-1) ...
+Setting up libssl-dev:armhf (1.1.1w-0+deb11u1) ...
+Setting up autopoint (0.21-4) ...
+Setting up sensible-utils (0.0.14) ...
+Setting up libuchardet0:armhf (0.0.7-1) ...
+Setting up libsub-override-perl (0.09-2) ...
+Setting up libelf1:armhf (0.183-1) ...
+Setting up readline-common (8.1-1) ...
+Setting up libxml2:armhf (2.9.10+dfsg-6.7+deb11u4) ...
+Setting up libpopt0:armhf (1.18-2) ...
+Setting up libfile-stripnondeterminism-perl (1.12.0-1) ...
+Setting up gettext (0.21-4) ...
+Setting up libtool (2.4.6-15) ...
+Setting up libreadline8:armhf (8.1-1) ...
+Setting up bc (1.07.1-2+b2) ...
+Setting up m4 (1.4.18-5) ...
+Setting up intltool-debian (0.35.0+20060710.5) ...
+Setting up autoconf (2.69-14) ...
+Setting up dh-strip-nondeterminism (1.12.0-1) ...
+Setting up dwz (0.13+20210201-1) ...
+Setting up groff-base (1.22.4-6) ...
+Setting up bison (2:3.7.5+dfsg-1) ...
+update-alternatives: using /usr/bin/bison.yacc to provide /usr/bin/yacc (yacc) in auto mode
+Setting up rsync (3.2.3-4+deb11u1) ...
+invoke-rc.d: could not determine current runlevel
+All runlevel operations denied by policy
+invoke-rc.d: policy-rc.d denied execution of start.
+Setting up automake (1:1.16.3-2) ...
+update-alternatives: using /usr/bin/automake-1.16 to provide /usr/bin/automake (automake) in auto mode
+Setting up flex (2.6.4-8) ...
+Setting up po-debconf (1.0.21+nmu1) ...
+Setting up man-db (2.9.4-2) ...
+Not building database; man-db/auto-update is not 'true'.
+Setting up dh-autoreconf (20) ...
+Setting up debhelper (13.3.4) ...
+Setting up sbuild-build-depends-main-dummy (0.invalid.0) ...
+Processing triggers for libc-bin (2.31-13+deb11u6) ...
+
++------------------------------------------------------------------------------+
+| Check architectures                                                          |
++------------------------------------------------------------------------------+
+
+Arch check ok (armhf included in armhf arm64)
+
++------------------------------------------------------------------------------+
+| Build environment                                                            |
++------------------------------------------------------------------------------+
+
+Kernel: Linux 5.15.0-86-generic #96-Ubuntu SMP Wed Sep 20 08:23:49 UTC 2023 amd64 (x86_64)
+Toolchain package versions: binutils_2.35.2-2 dpkg-dev_1.20.13 g++-10_10.2.1-6 gcc-10_10.2.1-6 libc6-dev_2.31-13+deb11u6 libstdc++-10-dev_10.2.1-6 libstdc++6_10.2.1-6 linux-libc-dev_5.10.197-1
+Package versions: adduser_3.118+deb11u1 apt_2.2.4 autoconf_2.69-14 automake_1:1.16.3-2 autopoint_0.21-4 autotools-dev_20180224.1+nmu1 base-files_11.1+deb11u8 base-passwd_3.5.51 bash_5.1-2+deb11u1 bc_1.07.1-2+b2 binutils_2.35.2-2 binutils-arm-linux-gnueabihf_2.35.2-2 binutils-common_2.35.2-2 bison_2:3.7.5+dfsg-1 bsdextrautils_2.36.1-8+deb11u1 bsdutils_1:2.36.1-8+deb11u1 build-essential_12.9 bzip2_1.0.8-4 coreutils_8.32-4 cpp_4:10.2.1-1 cpp-10_10.2.1-6 dash_0.5.11+git20200708+dd9ef66-5 debconf_1.5.77 debhelper_13.3.4 debian-archive-keyring_2021.1.1+deb11u1 debianutils_4.11.2 dh-autoreconf_20 dh-strip-nondeterminism_1.12.0-1 diffutils_1:3.7-5 dpkg_1.20.13 dpkg-dev_1.20.13 dwz_0.13+20210201-1 e2fsprogs_1.46.2-2 fakeroot_1.25.3-1.1 file_1:5.39-3+deb11u1 findutils_4.8.0-1 flex_2.6.4-8 g++_4:10.2.1-1 g++-10_10.2.1-6 gcc_4:10.2.1-1 gcc-10_10.2.1-6 gcc-10-base_10.2.1-6 gcc-9-base_9.3.0-22 gettext_0.21-4 gettext-base_0.21-4 gpgv_2.2.27-2+deb11u2 grep_3.6-1+deb11u1 groff-base_1.22.4-6 gzip_1.10-4+deb11u1 hostname_3.23 init-system-helpers_1.60 intltool-debian_0.35.0+20060710.5 libacl1_2.2.53-10 libapt-pkg6.0_2.2.4 libarchive-zip-perl_1.68-1 libasan6_10.2.1-6 libatomic1_10.2.1-6 libattr1_1:2.4.48-6 libaudit-common_1:3.0-2 libaudit1_1:3.0-2 libbinutils_2.35.2-2 libblkid1_2.36.1-8+deb11u1 libbz2-1.0_1.0.8-4 libc-bin_2.31-13+deb11u6 libc-dev-bin_2.31-13+deb11u6 libc6_2.31-13+deb11u6 libc6-dev_2.31-13+deb11u6 libcap-ng0_0.7.9-2.2+b1 libcc1-0_10.2.1-6 libcom-err2_1.46.2-2 libcrypt-dev_1:4.4.18-4 libcrypt1_1:4.4.18-4 libctf-nobfd0_2.35.2-2 libctf0_2.35.2-2 libdb5.3_5.3.28+dfsg1-0.8 libdebconfclient0_0.260 libdebhelper-perl_13.3.4 libdpkg-perl_1.20.13 libelf1_0.183-1 libext2fs2_1.46.2-2 libfakeroot_1.25.3-1.1 libffi7_3.3-6 libfile-stripnondeterminism-perl_1.12.0-1 libgcc-10-dev_10.2.1-6 libgcc-s1_10.2.1-6 libgcrypt20_1.8.7-6 libgdbm-compat4_1.19-2 libgdbm6_1.19-2 libgmp10_2:6.2.1+dfsg-1+deb11u1 libgnutls30_3.7.1-5+deb11u3 libgomp1_10.2.1-6 libgpg-error0_1.38-2 libgssapi-krb5-2_1.18.3-6+deb11u4 libhogweed6_3.7.3-1 libicu67_67.1-7 libidn2-0_2.3.0-5 libisl23_0.23-1 libk5crypto3_1.18.3-6+deb11u4 libkeyutils1_1.6.1-2 libkrb5-3_1.18.3-6+deb11u4 libkrb5support0_1.18.3-6+deb11u4 liblz4-1_1.9.3-2 liblzma5_5.2.5-2.1~deb11u1 libmagic-mgc_1:5.39-3+deb11u1 libmagic1_1:5.39-3+deb11u1 libmount1_2.36.1-8+deb11u1 libmpc3_1.2.0-1 libmpfr6_4.1.0-3 libncurses6_6.2+20201114-2+deb11u2 libnettle8_3.7.3-1 libnsl-dev_1.3.0-2 libnsl2_1.3.0-2 libp11-kit0_0.23.22-1 libpam-modules_1.4.0-9+deb11u1 libpam-modules-bin_1.4.0-9+deb11u1 libpam-runtime_1.4.0-9+deb11u1 libpam0g_1.4.0-9+deb11u1 libpcre2-8-0_10.36-2+deb11u1 libpcre3_2:8.39-13 libperl5.32_5.32.1-4+deb11u2 libpipeline1_1.5.3-1 libpopt0_1.18-2 libreadline8_8.1-1 libseccomp2_2.5.1-1+deb11u1 libselinux1_3.1-3 libsemanage-common_3.1-1 libsemanage1_3.1-1+b2 libsepol1_3.1-1 libsigsegv2_2.13-1 libsmartcols1_2.36.1-8+deb11u1 libss2_1.46.2-2 libssl-dev_1.1.1w-0+deb11u1 libssl1.1_1.1.1w-0+deb11u1 libstdc++-10-dev_10.2.1-6 libstdc++6_10.2.1-6 libsub-override-perl_0.09-2 libsystemd0_247.3-7+deb11u4 libtasn1-6_4.16.0-2+deb11u1 libtinfo6_6.2+20201114-2+deb11u2 libtirpc-common_1.3.1-1+deb11u1 libtirpc-dev_1.3.1-1+deb11u1 libtirpc3_1.3.1-1+deb11u1 libtool_2.4.6-15 libubsan1_10.2.1-6 libuchardet0_0.0.7-1 libudev1_247.3-7+deb11u4 libunistring2_0.9.10-4 libuuid1_2.36.1-8+deb11u1 libxml2_2.9.10+dfsg-6.7+deb11u4 libxxhash0_0.8.0-2 libzstd1_1.4.8+dfsg-2.1 linux-libc-dev_5.10.197-1 login_1:4.8.1-1 logsave_1.46.2-2 lsb-base_11.1.0 m4_1.4.18-5 make_4.3-4.1 man-db_2.9.4-2 mawk_1.3.4.20200120-2 mount_2.36.1-8+deb11u1 ncurses-base_6.2+20201114-2+deb11u2 ncurses-bin_6.2+20201114-2+deb11u2 passwd_1:4.8.1-1 patch_2.7.6-7 perl_5.32.1-4+deb11u2 perl-base_5.32.1-4+deb11u2 perl-modules-5.32_5.32.1-4+deb11u2 po-debconf_1.0.21+nmu1 readline-common_8.1-1 rsync_3.2.3-4+deb11u1 sbuild-build-depends-main-dummy_0.invalid.0 sed_4.7-1 sensible-utils_0.0.14 sysvinit-utils_2.96-7+deb11u1 tar_1.34+dfsg-1 tzdata_2021a-1+deb11u10 util-linux_2.36.1-8+deb11u1 xz-utils_5.2.5-2.1~deb11u1 zlib1g_1:1.2.11.dfsg-2+deb11u2
+
++------------------------------------------------------------------------------+
+| Build                                                                        |
++------------------------------------------------------------------------------+
+
+
+Unpack source
+-------------
+
+Format: 1.0
+Source: nomad-kernel
+Binary: nomad-kernel
+Architecture: armhf arm64
+Version: 1.20231006-1
+Maintainer: Jerry Olla <jerryolla@gmail.com>
+Homepage: https://github.com/jolla/nmad-kernel
+Standards-Version: 3.9.8
+Vcs-Browser: https://github.com/jolla/nmad-kernel
+Vcs-Git: git@github.com:jolla/nomad-kernel.git
+Build-Depends: debhelper (>= 10), bc, flex, bison, libssl-dev, rsync, gcc-aarch64-linux-gnu [!arm64 !armhf], gcc-arm-linux-gnueabihf [!armhf]
+Package-List:
+ nomad-kernel deb kernel optional arch=armhf,arm64
+Checksums-Sha1:
+ 5cdf9097e799bff057171f5df2cf112639e3e365 514226750 nomad-kernel_1.20231006-1.tar.gz
+Checksums-Sha256:
+ 221e88d97692fc5369c731f410f4c154954a29c08401b4655f0829f878b6a5aa 514226750 nomad-kernel_1.20231006-1.tar.gz
+Files:
+ bb95f30a648d72ac84ef491e973a6016 514226750 nomad-kernel_1.20231006-1.tar.gz
+
+dpkg-source: warning: extracting unsigned source package (nomad-kernel_1.20231006-1.dsc)
+dpkg-source: info: extracting nomad-kernel in /<<PKGBUILDDIR>>
+dpkg-source: info: unpacking nomad-kernel_1.20231006-1.tar.gz
+
+Check disk space
+----------------
+
+Sufficient free space for build
+
+User Environment
+----------------
+
+APT_CONFIG=/var/lib/sbuild/apt.conf
+HOME=/sbuild-nonexistent
+LANG=en_US.UTF-8
+LC_ALL=C.UTF-8
+LOGNAME=root
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+SCHROOT_ALIAS_NAME=bullseye-armhf-sbuild
+SCHROOT_CHROOT_NAME=bullseye-armhf-sbuild
+SCHROOT_COMMAND=env
+SCHROOT_GID=0
+SCHROOT_GROUP=root
+SCHROOT_SESSION_ID=bullseye-armhf-sbuild-a0d7cb41-fa6b-4210-a968-46a8dc7220cf
+SCHROOT_UID=0
+SCHROOT_USER=root
+SHELL=/bin/sh
+USER=root
+
+dpkg-buildpackage
+-----------------
+
+Command: dpkg-buildpackage --sanitize-env -us -uc -b -rfakeroot
+dpkg-buildpackage: warning: using a gain-root-command while being root
+dpkg-buildpackage: info: source package nomad-kernel
+dpkg-buildpackage: info: source version 1.20231006-1
+dpkg-buildpackage: info: source distribution bullseye
+dpkg-buildpackage: info: source changed by Jerry Olla <jerryolla@gmail.com>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture armhf
+ fakeroot debian/rules clean
+dh clean
+   dh_clean
+	rm -f debian/debhelper-build-stamp
+	rm -rf debian/.debhelper/
+	rm -f -- debian/nomad-kernel.substvars debian/files
+	rm -fr -- debian/nomad-kernel/ debian/tmp/
+	find .  \( \( \
+		\( -path .\*/.git -o -path .\*/.svn -o -path .\*/.bzr -o -path .\*/.hg -o -path .\*/CVS -o -path .\*/.pc -o -path .\*/_darcs \) -prune -o -type f -a \
+	        \( -name '#*#' -o -name '.*~' -o -name '*~' -o -name DEADJOE \
+		 -o -name '*.orig' -o -name '*.rej' -o -name '*.bak' \
+		 -o -name '.*.orig' -o -name .*.rej -o -name '.SUMS' \
+		 -o -name TAGS -o \( -path '*/.deps/*' -a -name '*.P' \) \
+		\) -exec rm -f {} + \) -o \
+		\( -type d -a -name autom4te.cache -prune -exec rm -rf {} + \) \)
+ debian/rules build
+dh build
+   dh_update_autotools_config
+   dh_autoreconf
+   create-stamp debian/debhelper-build-stamp
+ fakeroot debian/rules binary
+dh binary
+   dh_testroot
+   dh_prep
+	rm -f -- debian/nomad-kernel.substvars
+	rm -fr -- debian/.debhelper/generated/nomad-kernel/ debian/nomad-kernel/ debian/tmp/
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/<<PKGBUILDDIR>>'
+mkdir -p \
+	debian/nomad-kernel/boot \
+	debian/nomad-kernel/lib/modules
+cp -r output/boot/overlays debian/nomad-kernel/boot
+cp output/boot/bcm271*.dtb debian/nomad-kernel/boot
+cp: cannot stat 'output/boot/bcm271*.dtb': No such file or directory
+make[1]: *** [debian/rules:22: override_dh_auto_install] Error 1
+make[1]: Leaving directory '/<<PKGBUILDDIR>>'
+make: *** [debian/rules:17: binary] Error 2
+dpkg-buildpackage: error: fakeroot debian/rules binary subprocess returned exit status 2
+--------------------------------------------------------------------------------
+Build finished at 2023-10-07T12:24:53Z
+
+Finished
+--------
+
+
++------------------------------------------------------------------------------+
+| Cleanup                                                                      |
++------------------------------------------------------------------------------+
+
+Purging /<<BUILDDIR>>
+Not cleaning session: cloned chroot in use
+E: Build failure (dpkg-buildpackage died)
+
++------------------------------------------------------------------------------+
+| Summary                                                                      |
++------------------------------------------------------------------------------+
+
+Build Architecture: armhf
+Build Type: binary
+Build-Space: 1824952
+Build-Time: 21
+Distribution: bullseye
+Fail-Stage: build
+Host Architecture: armhf
+Install-Time: 57
+Job: ../nomad-kernel_1.20231006-1.dsc
+Machine Architecture: amd64
+Package: nomad-kernel
+Package-Time: 248
+Source-Version: 1.20231006-1
+Space: 1824952
+Status: attempted
+Version: 1.20231006-1
+--------------------------------------------------------------------------------
+Finished at 2023-10-07T12:24:53Z
+Build needed 00:04:08, 1824952k disk space
